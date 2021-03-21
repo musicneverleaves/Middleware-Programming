@@ -1,0 +1,272 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Taiwan, Love</title>
+    <link href="css/maincss.css" rel="stylesheet">
+
+</head>
+
+<body id="page-top">
+    <nav id="mainNav" class="navbar">
+        <div class="navContainer">
+            <div class="navbar-header">
+                <a class="navbar-brand page-scroll" href="#page-top">Taiwan, Love</a>
+            </div>
+            <div class="navbar-collapse">
+                <ul class="navbar navContainer navbar-right">
+                    <li><a class="page-scroll" href="#Location" id="L1">Location</a></li>
+                    <li><a class="page-scroll" href="#City" id="C1">City</a></li>
+                    <li><a class="page-scroll" href="#JoinUs" id="J1">Join Us</a></li>
+                    <li><a class="page-scroll" href="#ContactUs" id="C2">Contact Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="header-content">
+            <video muted playsinline autoplay loop>
+                <source src="../IFT 598/img/TaiwanFlightNight.mp4" type="video/mp4">
+            </video>
+            <P>Explore More Magnificent Views Here !</P>
+            <form id="searchForm" method="get" action="result">
+                <div class="search">
+                    <input type="text" class="searchbar" name="search" placeholder="search...">
+                    <div class="subbotton">
+                        <input type="submit" value="Find out" id="submitButton" class="btn">
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </header>
+
+    <section id="Location">
+        <div class="location">
+            <p>Click the button to get your coordinates.</p>
+            <hr>
+            <object data="img/mapicon.svg" type="image/svg+xml"></object>
+            <button class=" btn btn-location " type="button " onclick="showPosition(); ">Show My Position on Google Map</button>
+            <div id="embedMap ">
+                <!--Google map will be embedded here-->
+            </div>
+
+            <script>
+                function showPosition() {
+                    navigator.geolocation.getCurrentPosition(showMap);
+                }
+
+                function showMap(position) {
+                    var latlong = position.coords.latitude + ", " + position.coords.longitude;
+
+                    // Set Google map source url
+                    var mapLink = "https://maps.googleapis.com/maps/api/staticmap?center=" + latlong + " &zoom=16&size=400x300&key=AIzaSyDkoTYMkPvGERZbFJ8XfYboKdSjRzSfsNs&output=embed ";
+
+                    // Create and insert Google map
+                    document.getElementById("embedMap ").innerHTML = "<img alt='Map Holder' src='" + mapLink + "'>";
+                }
+            </script>
+        </div>
+    </section>
+    <section class="no-padding" id="City">
+        <div class="container-fluid">
+            <div class="row no-gutter popup-gallery">
+                <div class="col-lg-4 col-sm-6">
+                    <a href="img/taipei.jpg" class="portfolio-box">
+                        <img src="img/taipei.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    City
+                                </div>
+                                <div class="project-name">
+                                    Taipei
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="img/tainan.jpg" class="portfolio-box">
+                        <img src="img/tainan.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    City
+                                </div>
+                                <div class="project-name">
+                                    Tainan
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="img/taitung.jpg" class="portfolio-box">
+                        <img src="img/taitung.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    City
+                                </div>
+                                <div class="project-name">
+                                    Taitung
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <a href="img/nantou.jpg" class="portfolio-box">
+                        <img src="img/nantou.jpg" class="img-responsive" alt="">
+                        <div class="portfolio-box-caption">
+                            <div class="portfolio-box-caption-content">
+                                <div class="project-category text-faded">
+                                    City
+                                </div>
+                                <div class="project-name">
+                                    Nantou
+                                </div>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="JoinUs">
+        <div class="signup-container">
+            <div class="text-center">
+                <h1 class="section-heading">Join Us !</h1>
+                <hr>
+            </div>
+
+            <article>
+
+                <div class="register-container signup__form">
+
+                    <p>Join us to comment, upload your pictures and share to the world ! </p>
+
+                    <form action="#">
+                        <div class="form-group">
+                            <label for="username">Username</label>
+                            <input class="form-control" type="text" name="username" id="username" placeholder="Peter Pan" maxlength="8" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="firstName">First name (not required)</label>
+                            <input class="form-control" type="text" name="firstName" id="firstName" placeholder="Peter" />
+                        </div>
+                        <div class="form-group">
+                            <label for="middleName">Middle name (not required)</label>
+                            <input class="form-control" type="text" name="middleName" id="middleName" />
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Last name (not required)</label>
+                            <input class="form-control" type="text" name="lastName" id="lastName" placeholder="Pan" />
+                        </div>
+                        <div class="form-group">
+                            <label for="gender">Gender</label>
+                            <select class="form-group" name="problem" id="gender">
+                                <option value="male" selected>Male</option>
+                                <option value="female">Female</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Street address</label>
+                            <input class="form-control" type="text" name="address" id="address" placeholder="456 North Elizabeth Road
+                            Palm City, FL 34990" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="city">City</label>
+                            <input class="form-control" type="text" name="city" id="city" placeholder="Palm City" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="state">State (US states only)</label>
+                            <input class="form-control" type="text" name="state" id="state" placeholder="FL" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="zipCode">Zip code</label>
+                            <input class="form-control" type="text" name="zipCode" id="zipCode" placeholder="456" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input class="form-control" type="text" name="email" id="email" placeholder="Peter.Pan@google.com" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="cellphone">Cell Phone number</label>
+                            <input class="form-control" type="text" name="cellphone" id="cellphone" placeholder="480-***-****" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="COO">Country of Origin</label>
+                            <input class="form-control" type="text" name="COO" id="COO" placeholder="Taiwan" required />
+                        </div>
+                        <div class="form-group">
+                            <label for="dateBirth">Date of Birth</label>
+                            <input autocomplete="off" class="text" id="dateBirth" name="dateBirth" placeholder="DD-MM-YYYY" type="date" min="1900-12-12" max="2016-01-01" spellcheck="false" value="1990-12-17">
+                        </div>
+                        <div class="form-group">
+                            <label for="memberOrg">Member Organization (not required)</label>
+                            <input class="form-control" type="text" name="memberOrg" id="memberOrg" placeholder="ASU" />
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input class="form-control" type="password" name="password" id="password" placeholder="********" maxlength="8" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])" title="must be at most 8 characters long comprising at least a digit, 
+                            a lowercase letter, and an uppercase letter" required />
+                        </div>
+                        <div class="regist-list">
+                            <ul class="list-inline">
+                                <li>
+                                    <input class="btn btn-regist" type="submit" value="Register" />
+                                </li>
+                                <li>
+                                    <a class="signup_link" href="#">I am already a member</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </form>
+
+                </div>
+                <!-- end .content -->
+
+            </article>
+
+            <div>
+    </section>
+    <section id="ContactUs">
+        <div class="container">
+            <div class="contact">
+                <div class="contact-text">
+                    <h2 class="section-heading">Contact Us</h2>
+                    <hr>
+                    <h4>If you have any questions and copyright issue, please let me know!</h4>
+                    <div class="contact-icon">
+                        <object data="img/linkedinIcon.svg" type="image/svg+xml"></object>
+                        <p><a href="www.linkedin.com/in/pichin-chao-b315b6192" target="_blank" style="text-decoration:none;">PiChin Chao</a></p>
+                    </div>
+                    <div class="contact-icon">
+                        <object data="img/locationIcon.svg" type="image/svg+xml"></object>
+                        <p>1223****Rd, Tempe, AZ, 852**</p>
+                    </div>
+                    <div class="contact-icon">
+                        <object data="img/emailIcon.svg" type="image/svg+xml"></object>
+                        <p><a href="mailto:pchao7@asu.edu" style="text-decoration:none;">pchao7@asu.edu</a></p>
+                    </div>
+                    <div class="contact-icon">
+                        <object data="img/phoneIcon.svg" type="image/svg+xml"></object>
+                        <p>480-***-****</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script type="text/javascript" src="../IFT 598/js/jquery.js"></script>
+    <script type="text/javascript" src="../IFT 598/js/scroll.js"></script>
+</body>
+
+</html>
